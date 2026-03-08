@@ -16,6 +16,10 @@ document.getElementById("login").addEventListener("click", ()=>{
 })
 
 
+// some of js trading
+
+
+
 
 
 
