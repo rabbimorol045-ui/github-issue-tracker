@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment - 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      * {
+        font-family: "Geist", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="flex h-screen justify-center items-center">
+    <div
+      class="fieldset shadow-lg border-base-300 rounded-box w-[400px] border p-5"
+    >
+      <div class="text-center">
+        <img src="./assets/github-logo.png" class="mx-auto" alt="" />
+      <h1 class="text-2xl font-semibold">GitHub Issues Tracker</h1>
+      <p class="text-[#64748B] ">Sign in to manage your issues</p>
+      </div>
+      <div>
+        <fieldset class="space-y-4">
+          <div>
+            <label class="label text-[#3D3746] font-medium">Username</label>
+            <input id="userName" type="text" class="input" placeholder="Enter Username" />
+            <h1 class="text-[#4A00FF] mt-1">Default: admin</h1>
+          </div>
+
+          <div>
+            <label class="label text-[#3D3746] font-medium">Password</label>
+            <input id="userPassword"  type="password" class="input" placeholder="Enter Password" />
+            <h1 class="text-[#4A00FF] mt-1">Default: admin123</h1>
+          </div>
+
+          <button id="login" class="btn btn-primary w-full mt-4">Login</button>
+        </fieldset>
+        <div class="border-t border-[#cacacc] mt-7 relative">
+            <h2 class="bg-white p-1 absolute left-1/2 -top-4.5 text-[16px] -translate-x-[50%] transform">OR</h2>
+            <div class="text-center space-y-4 pt-6">
+                <h3 class="text-[#64748B]">Demo Credentials:</h3>
+
+                <div>
+                    <p class="text-[16px]"><span class="font-semibold ">Username:</span> admin</p>
+                    <p class="text-[16px]"><span class="font-semibold "> Password:</span> admin123</p>              
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./login.js"></script>
+  </body>
+</html>

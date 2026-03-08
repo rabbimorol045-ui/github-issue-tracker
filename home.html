@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 5</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      * {
+        font-family: "Geist", sans-serif;
+      }
+    </style>
+<body class="bg-[#eceef0] ">
+    
+    <header class="flex flex-wrap gap-5 bg-white justify-between items-center py-5 shadow px-11">
+        <div class="flex items-center gap-3">
+            <img src="./assets/github-logo.png" class="w-[40px]" alt="">
+            <h2 class="text-2xl font-semibold text-[#1F2937]">GitHub Issues Tracker</h2>
+        </div>
+        <div class="flex gap-3">
+            <div class="border relative w-fit px-3 py-2 border-[#E4E4E7] rounded-md">
+                <i class="fa-solid fa-magnifying-glass text-[#64748B] absolute left-4 top-[50%] -translate-y-[50%]"></i>
+                <input id="searchInput" type="text" placeholder="Search issues..." class="border-none pl-7">
+            </div>
+            <button class="btn bg-[#4A00FF] text-white">+ New Issue</button>
+        </div>
+    </header>
+
+    <section class="max-w-[1200px] rounded-md bg-white mx-auto shadow-sm border-t border-gray-200 mt-12 py-5 px-5">
+        <div class=" flex gap-3">
+            <button onclick="buttonStyle('allBtn')" id="allBtn" class="btn px-9">All</button>
+            <button onclick="buttonStyle('openBtn')" id="openBtn" class="btn px-9">Open</button>
+            <button onclick="buttonStyle('closedBtn')" id="closedBtn" class="btn px-9">Closed</button>
+        </div>
+    </section>
+
+    <section class="max-w-[95%] md:max-w-[1200px] mx-auto shadow-sm border-t rounded-md border-gray-200 mt-2 ">
+        <div>
+           <div>
+             <div class="flex items-center gap-2 justify-between rounded-md border-b border-[#cacaca]  bg-white py-5 px-5">
+                <div class="gap-2 flex items-center">
+                    <img src="./assets/Aperture.png" alt="" class="bg-[#3B25C1]/20 p-2 rounded-full">
+                <div>
+                    <h1 class="font-semibold text-[20px]"><span id="totalCount"></span> Issues</h1>
+                    <p class="text-[#64748B]">Track and manage your project issues</p>
+                </div>
+                </div>
+                <div class="flex gap-6">
+                <div class="flex gap-2">
+                    <p class="bg-green-600 rounded-full h-5 w-5"></p>
+                    <h3 class="">Open</h3>
+                </div>
+                <div class="flex gap-2">
+                    <p class="bg-[#A855F7] rounded-full h-5 w-5"></p>
+                    <h3 class="">Closed</h3>
+                </div>
+            </div>
+                
+            </div>
+            
+           </div>
+
+            <div id="cardSection" class="m-4 shadow-md gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <!-- <div class="p-5 rounded-md bg-white relative space-y-4">
+                    <div class="flex justify-between items-center">
+                        <img src="./assets/Open-Status.png" alt="" class="bg-[#CBFADB] p-1 rounded-full">
+                        <h2 class="text-[#EF4444] bg-[#EF4444]/10 w-fit px-7 rounded-full">High</h2>
+                    </div>
+                    <div>
+                        <h2 class="font-semibold">Fix navigation menu on mobile devices</h2>
+                    <p class="text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices...</p>
+                    </div>
+
+                    <div class="flex  mb-7 flex-wrap gap-2">
+                        <p class="text-[#EF4444] bg-[#FEECEC] border-2 text-[11px] uppercase border-[#FECACA] px-5 py-1 rounded-full"><i class="fa-solid fa-bug"></i> Bug</p>
+                        <p class="bg-[#FFF8DB] text-[#D97706] border-2 text-[11px] uppercase border-[#FDE68A] px-5 py-1 rounded-full"><i class="fa-solid fa-life-ring"></i> help wanted</p>
+                    </div>
+                    <div class="w-full h-[2px] bg-[#E4E4E7] top-[65%] left-0"></div>
+                    <h5 class="text-[#64748B]">#1 by john_doe</h5>
+                    <h6 class="text-[#64748B]">1/15/2024</h6>
+                </div> -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+
+<dialog id="my_modal_1" class="modal">
+  <div  class="modal-box">
+    <div id="modal_content">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+    
+
+    <script src="./card.js"></script>
+</body>
+</html>
